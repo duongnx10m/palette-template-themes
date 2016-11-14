@@ -1,0 +1,15 @@
+1. NavigationDrawerActivity
+	+ activity_main.xml (v4.DrawerLayout)
+		++ app_bar_main.xml
+		++ NavigationView
+			- header
+			- menu
+	+ app_bar_main.xml
+		++ 
+2. ScrollingActivity
+3. SettingsActivity
+4. TabbedActivity
+5. LoginActivity
+6. FullScreenActivity
+7. AdMobAdsActivity
+8. 
