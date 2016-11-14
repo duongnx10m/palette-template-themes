@@ -2,17 +2,14 @@ package com.duongnx.navigationdrawer.wigets;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Paint;
-import android.graphics.Path;
 import android.graphics.Point;
 import android.graphics.Shader;
-import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
-import com.com.duongnx.navigationdrawer.R;
 import com.duongnx.configs.GApplication;
 import com.duongnx.configs.ThemeType;
 import com.duongnx.configs.utils.Utils;
@@ -52,7 +49,8 @@ public class NavigationHeaderView extends View {
         //paintMain.setColor(ContextCompat.getColor(context, color));
         paintMain.setStyle(Paint.Style.FILL);
         //paintMain.setShadowLayer(10, 0, 0, Color.BLACK);
-        themeColors = Utils.readThemes(getContext(), themeType.getThemeId());
+        themeColors = Utils.getColorsFromTheme(getContext(), themeType.getThemeId());
+        Log.d("duongnx", themeType.name() + ";"+Integer.toHexString(themeColors[0]) + "===" + Integer.toHexString(themeColors[1]));
         paintMain.setColor(themeColors[1]);
 
 

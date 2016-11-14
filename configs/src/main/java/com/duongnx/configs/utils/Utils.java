@@ -45,10 +45,10 @@ public class Utils {
         return size;
     }
 
-    public static int[] readThemes(Context context,int themeId) {
+    public static int[] getColorsFromTheme(Context context, int themeId) {
         int[] results = new int[3];
         int[] attrs = {android.R.attr.colorAccent, android.R.attr.colorPrimary, android.R.attr.colorPrimaryDark};
-        if (GApplication.getInstance() != null) {
+        if (context != null) {
             TypedArray typedArray = context.obtainStyledAttributes(themeId, attrs);
             if (typedArray != null) {
                 results[0] = typedArray.getColor(0, Color.BLACK);

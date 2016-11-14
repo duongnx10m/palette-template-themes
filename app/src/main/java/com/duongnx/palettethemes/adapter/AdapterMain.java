@@ -1,13 +1,18 @@
 package com.duongnx.palettethemes.adapter;
 
 import android.content.Context;
+import android.content.res.TypedArray;
+import android.graphics.Color;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
+import com.duongnx.configs.GApplication;
 import com.duongnx.configs.ThemeType;
+import com.duongnx.configs.utils.Utils;
 import com.duongnx.palettethemes.R;
 
 /**
@@ -22,6 +27,7 @@ public class AdapterMain extends RecyclerView.Adapter<AdapterMain.VhMain> implem
     private Context mContext;
     private ThemeType[] datas = {};
     private OnRecyclerItemClickListener onRecyclerItemClickListener;
+
 
     public AdapterMain(Context context, ThemeType[] datas) {
         super();
@@ -67,16 +73,24 @@ public class AdapterMain extends RecyclerView.Adapter<AdapterMain.VhMain> implem
     }
 
     public class VhMain extends RecyclerView.ViewHolder {
-        private TextView tvContent;
+        private View colorPrimaryDark, colorPrimary, colorAccent;
 
 
         public VhMain(View itemView) {
             super(itemView);
-            //tvContent = (TextView) itemView.findViewById(R.id.tvContent);
+            colorPrimaryDark = itemView.findViewById(R.id.colorPrimaryDark);
+            colorPrimary = itemView.findViewById(R.id.colorPrimary);
+            colorAccent = itemView.findViewById(R.id.colorAccent);
         }
 
-        public void setContent(ThemeType content) {
-            //tvContent.setText(content);
+
+        public void setContent(ThemeType themeType) {
+            mContext.setTheme(themeType.getThemeId());
+            int[] colors = Utils.getColorsFromTheme(mContext, themeType.getThemeId());
+            colorAccent.setBackgroundColor(colors[0]);
+            colorPrimary.setBackgroundColor(colors[1]);
+            colorPrimaryDark.setBackgroundColor(colors[2]);
+            // Log.d("duongnx", "setContent:" + themeType.name() + themeType.getThemeId() + ";" + Integer.toHexString(colors[0]));
         }
 
 
