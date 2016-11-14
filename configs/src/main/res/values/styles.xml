@@ -9,7 +9,7 @@
     <style name="AppThemeRed" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/red_500</item>
         <item name="colorPrimaryDark">@color/red_700</item>
-        <item name="colorAccent">@color/indigo_A200</item>
+        <item name="colorAccent">@color/red_A200</item>
     </style>
 
     <style name="AppThemeRed.NoActionBar">
