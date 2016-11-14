@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/configs/configs.iml" filepath="$PROJECT_DIR$/configs/configs.iml" />
       <module fileurl="file://$PROJECT_DIR$/navigationdrawer/navigationdrawer.iml" filepath="$PROJECT_DIR$/navigationdrawer/navigationdrawer.iml" />
       <module fileurl="file://$PROJECT_DIR$/palette-template-themes.iml" filepath="$PROJECT_DIR$/palette-template-themes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/scrolling/scrolling.iml" filepath="$PROJECT_DIR$/scrolling/scrolling.iml" />
     </modules>
   </component>
 </project>

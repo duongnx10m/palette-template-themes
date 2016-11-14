@@ -19,7 +19,9 @@ public class GApplication extends Application {
     public void onCreate() {
         super.onCreate();
         instance = this;
+        //updateThemes();
     }
+
 
     public ThemeType getThemeType() {
         return themeType;

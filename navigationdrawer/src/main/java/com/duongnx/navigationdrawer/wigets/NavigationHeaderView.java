@@ -28,6 +28,7 @@ public class NavigationHeaderView extends View {
     private int width = 100, height = 100;
     private ThemeType themeType = GApplication.getInstance().getThemeType();
     private int radius = 50;
+    private int[] themeColors;
 
     public NavigationHeaderView(Context context) {
         super(context);
@@ -51,7 +52,8 @@ public class NavigationHeaderView extends View {
         //paintMain.setColor(ContextCompat.getColor(context, color));
         paintMain.setStyle(Paint.Style.FILL);
         //paintMain.setShadowLayer(10, 0, 0, Color.BLACK);
-        paintMain.setColor(ContextCompat.getColor(getContext(), themeType.getColorPrimary()));
+        themeColors = Utils.readThemes(getContext(), themeType.getThemeId());
+        paintMain.setColor(themeColors[1]);
 
 
     }
@@ -63,9 +65,9 @@ public class NavigationHeaderView extends View {
         if (themeType != null) {
             canvas.drawRect(0, 0, width, height, paintMain);
 
-            drawCircle(canvas, width / 2 - 4 * radius, height / 2, themeType.getColorPrimaryDark());
-            drawCircle(canvas, width / 2, height / 2, themeType.getColorPrimary());
-            drawCircle(canvas, width / 2 + 4 * radius, height / 2, themeType.getColorAccent());
+            drawCircle(canvas, width / 2 - 4 * radius, height / 2, themeColors[2]);
+            drawCircle(canvas, width / 2, height / 2, themeColors[1]);
+            drawCircle(canvas, width / 2 + 4 * radius, height / 2, themeColors[0]);
         }
     }
 
@@ -74,8 +76,8 @@ public class NavigationHeaderView extends View {
         super.onSizeChanged(w, h, oldw, oldh);
         width = w;
         height = h;
-        int colorStart = ContextCompat.getColor(getContext(), themeType.getColorPrimaryDark());
-        int colorEnd = ContextCompat.getColor(getContext(), themeType.getColorAccent());
+        int colorStart = themeColors[2];
+        int colorEnd = themeColors[0];
         Shader shader = new LinearGradient(0, 0, 0, height, colorStart, colorEnd, Shader.TileMode.CLAMP);
         paintMain.setShader(shader);
     }
@@ -83,36 +85,11 @@ public class NavigationHeaderView extends View {
     private void drawCircle(Canvas canvas, float x, float y, int color) {
         Paint paint = new Paint();
         //paint.setAlpha();
-        paint.setColor(ContextCompat.getColor(getContext(), color));
+        paint.setColor(color);
         paint.setStyle(Paint.Style.FILL);
         paint.setAntiAlias(true);
         canvas.drawCircle(x, y, radius, paint);
     }
 
-    private void drawTriangle(Canvas canvas) {
-        Paint paint = new Paint();
-        paint.setStrokeWidth(5);
-        //paint.setShadowLayer(10, 0, 0, Color.BLACK);
-        paint.setColor(ContextCompat.getColor(getContext(), themeType.getColorPrimaryDark()));
-        paint.setStyle(Paint.Style.FILL_AND_STROKE);
-        paint.setAntiAlias(true);
 
-        Point a = new Point(0, height / 2);
-        Point b = new Point(0, height);
-        Point c = new Point(height / 2, height);
-
-        canvas.drawPath(getPath(a, b, c), paint);
-    }
-
-
-    private Path getPath(Point a, Point b, Point c) {
-        Path path = new Path();
-        path.moveTo(b.x, b.y);
-        path.setFillType(Path.FillType.EVEN_ODD);
-        path.lineTo(b.x, b.y);
-        path.lineTo(c.x, c.y);
-        path.lineTo(a.x, a.y);
-        path.close();
-        return path;
-    }
 }
