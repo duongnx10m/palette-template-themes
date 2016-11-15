@@ -1,5 +1,6 @@
 package com.duongnx.palettethemes;
 
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -15,27 +16,24 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.duongnx.configs.GApplication;
 import com.duongnx.palettethemes.fragments.FrgSliddingTabsColor;
 import com.duongnx.palettethemes.fragments.FrgSliddingTabsReview;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private String[] colorNames;
+    private FloatingActionButton floatingActionButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(GApplication.getInstance().getThemeType().getThemeId());
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        floatingActionButton = (FloatingActionButton) findViewById(R.id.fab);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -47,6 +45,20 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         changeMenuFragment(new FrgSliddingTabsColor());
+        loadNames();
+    }
+
+    public String[] getColorNames() {
+        return colorNames;
+    }
+
+    private void loadNames() {
+        TypedArray typedArray = getResources().obtainTypedArray(R.array.color_names);
+        colorNames = new String[typedArray.length()];
+        for (int i = 0; i < typedArray.length(); i++) {
+            colorNames[i] = typedArray.getString(i);
+        }
+        typedArray.recycle();
     }
 
     @Override
@@ -107,5 +119,9 @@ public class MainActivity extends AppCompatActivity
             //fragmentTransaction.addToBackStack(fragment.getClass().getSimpleName());
             fragmentTransaction.commitAllowingStateLoss();
         }
+    }
+
+    public FloatingActionButton getFloatingActionButton() {
+        return floatingActionButton;
     }
 }

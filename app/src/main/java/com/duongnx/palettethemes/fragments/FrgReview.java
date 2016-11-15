@@ -15,6 +15,7 @@ import com.duongnx.navigationdrawer.NavigationActivity;
 import com.duongnx.palettethemes.R;
 import com.duongnx.palettethemes.adapter.AdapterReview;
 import com.duongnx.palettethemes.common.OnRecyclerItemClickListener;
+import com.duongnx.scrolling.ScrollingActivity;
 
 /**
  * Created by duongnx on 11/14/16.
@@ -53,7 +54,7 @@ public class FrgReview extends FrgBase implements OnRecyclerItemClickListener {
     public void onRecyclerItemClick(int position) {
         ThemeType themeType = mAdapter.getItem(position);
         GApplication.getInstance().setThemeType(themeType);
-        Intent intent = new Intent(mActivity, NavigationActivity.class);
+        Intent intent = new Intent(mActivity, ScrollingActivity.class);
         startActivity(intent);
     }
 }

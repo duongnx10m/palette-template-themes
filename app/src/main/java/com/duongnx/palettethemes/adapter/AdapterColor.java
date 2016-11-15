@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.duongnx.palettethemes.Defines;
 import com.duongnx.palettethemes.R;
 import com.duongnx.palettethemes.common.OnRecyclerItemClickListener;
 import com.duongnx.palettethemes.models.ItemColor;
@@ -40,9 +41,9 @@ public class AdapterColor extends RecyclerView.Adapter<AdapterColor.VhMain> impl
     @Override
     public VhMain onCreateViewHolder(ViewGroup parent, int viewType) {
         View view;
-        if (viewType == COLOR_HEADER)
+        if (viewType == COLOR_HEADER) {
             view = LayoutInflater.from(mContext).inflate(R.layout.item_lv_color_header, parent, false);
-        else
+        } else
             view = LayoutInflater.from(mContext).inflate(R.layout.item_lv_color, parent, false);
         view.setOnClickListener(this);
         return new VhMain(view);
@@ -70,7 +71,7 @@ public class AdapterColor extends RecyclerView.Adapter<AdapterColor.VhMain> impl
     @Override
     public void onClick(View view) {
         if (onRecyclerItemClickListener != null) {
-            onRecyclerItemClickListener.onRecyclerItemClick((Integer) view.getTag());
+            onRecyclerItemClickListener.onRecyclerItemClick(0);
         }
     }
 
@@ -91,7 +92,7 @@ public class AdapterColor extends RecyclerView.Adapter<AdapterColor.VhMain> impl
         }
 
         public void setContent(ItemColor itemColor, int position) {
-            if (position >= 1 && position < 5) {
+            if ((position >= 1 && position < 5) || itemColor.getName().equals("A100") || itemColor.getName().equals("A200")) {
                 tvName.setTextColor(Color.BLACK);
                 tvValue.setTextColor(Color.BLACK);
             } else {

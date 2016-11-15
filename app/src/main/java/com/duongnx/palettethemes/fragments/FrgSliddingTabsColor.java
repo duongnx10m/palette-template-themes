@@ -3,13 +3,14 @@ package com.duongnx.palettethemes.fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.duongnx.configs.GApplication;
 import com.duongnx.palettethemes.R;
 import com.duongnx.palettethemes.adapter.AdapterPagerColor;
-import com.duongnx.palettethemes.adapter.AdapterPagerReview;
 import com.duongnx.palettethemes.slidding.SlidingTabLayout;
 
 /**
@@ -40,5 +41,19 @@ public class FrgSliddingTabsColor extends FrgBase {
 
         viewPager.setAdapter(mAdapter);
         slidingTabLayout.setViewPager(viewPager);
+        viewPager.setCurrentItem(GApplication.getInstance().getCurrentViewPagerItem());
+        //GApplication.getInstance().setCurrentViewPagerItem(0);
+        mActivity.getFloatingActionButton().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FrgColor frgColor = (FrgColor) mAdapter.getItem(viewPager.getCurrentItem());
+                if (frgColor != null) {
+                    GApplication.getInstance().setCurrentViewPagerItem(viewPager.getCurrentItem());
+                    GApplication.getInstance().setThemeType(frgColor.getThemeType());
+                    mActivity.recreate();
+                }
+            }
+        });
     }
+
 }

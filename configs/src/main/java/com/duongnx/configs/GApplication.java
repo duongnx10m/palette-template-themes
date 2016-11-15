@@ -8,8 +8,9 @@ import android.app.Application;
 
 public class GApplication extends Application {
 
-    private ThemeType themeType = ThemeType.RED;
+    private ThemeType themeType = ThemeType.PINK;
     static GApplication instance;
+    private int currentViewPagerItem = 0;
 
     public static GApplication getInstance() {
         return instance;
@@ -29,5 +30,13 @@ public class GApplication extends Application {
 
     public void setThemeType(ThemeType themeType) {
         this.themeType = themeType;
+    }
+
+    public int getCurrentViewPagerItem() {
+        return currentViewPagerItem;
+    }
+
+    public void setCurrentViewPagerItem(int currentViewPagerItem) {
+        this.currentViewPagerItem = currentViewPagerItem;
     }
 }

@@ -90,9 +90,9 @@ public class AdapterReview extends RecyclerView.Adapter<AdapterReview.VhMain> im
             colorPrimary.setBackgroundColor(colors[1]);
             colorPrimaryDark.setBackgroundColor(colors[2]);
 
-            tvAccent.setText("colorAccent: #" + Integer.toHexString(colors[0]).replaceAll("ff", ""));
-            tvPrimary.setText("colorPrimary: #" + Integer.toHexString(colors[1]).replaceAll("ff", ""));
-            tvPrimaryDark.setText("colorPrimaryDark: #" + Integer.toHexString(colors[2]).replaceAll("ff", ""));
+            tvAccent.setText("colorAccent: #" + Integer.toHexString(colors[0]).substring(2, 8));
+            tvPrimary.setText("colorPrimary: #" + Integer.toHexString(colors[1]).substring(2, 8));
+            tvPrimaryDark.setText("colorPrimaryDark: #" + Integer.toHexString(colors[2]).substring(2, 8));
         }
 
 
