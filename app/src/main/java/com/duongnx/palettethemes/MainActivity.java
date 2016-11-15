@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.duongnx.palettethemes.fragments.FrgSliddingTabsColor;
 import com.duongnx.palettethemes.fragments.FrgSliddingTabsReview;
 
 public class MainActivity extends AppCompatActivity
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        changeMenuFragment(new FrgSliddingTabsReview());
+        changeMenuFragment(new FrgSliddingTabsColor());
     }
 
     @Override
@@ -84,20 +85,13 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        switch (item.getItemId()) {
+            case R.id.nav_color:
+                changeMenuFragment(new FrgSliddingTabsColor());
+                break;
+            case R.id.nav_preview:
+                changeMenuFragment(new FrgSliddingTabsReview());
+                break;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

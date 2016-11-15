@@ -3,13 +3,14 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/nav_color"
+            android:checked="true"
             android:icon="@drawable/ic_menu_camera"
             android:title="Color Palette" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_preview"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Color Review" />
+            android:title="Color Preview" />
 
     </group>
 

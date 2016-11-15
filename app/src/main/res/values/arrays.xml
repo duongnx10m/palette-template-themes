@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="color_names">
+        <item>@string/c_50</item>
+        <item>@string/c_100</item>
+        <item>@string/c_200</item>
+        <item>@string/c_300</item>
+        <item>@string/c_400</item>
+        <item>@string/c_500</item>
+        <item>@string/c_600</item>
+        <item>@string/c_700</item>
+        <item>@string/c_800</item>
+        <item>@string/c_900</item>
+        <item>@string/c_A100</item>
+        <item>@string/c_A200</item>
+        <item>@string/c_A400</item>
+        <item>@string/c_A700</item>
+    </string-array>
+    <array name="color_reds">
+        <item>@color/red_50</item>
+        <item>@color/red_100</item>
+        <item>@color/red_200</item>
+        <item>@color/red_300</item>
+        <item>@color/red_400</item>
+        <item>@color/red_500</item>
+        <item>@color/red_600</item>
+        <item>@color/red_700</item>
+        <item>@color/red_800</item>
+        <item>@color/red_900</item>
+        <item>@color/red_A100</item>
+        <item>@color/red_A200</item>
+        <item>@color/red_A400</item>
+        <item>@color/red_A700</item>
+    </array>
+    <array name="color_indigos">
+        <item>@color/indigo_50</item>
+        <item>@color/indigo_100</item>
+        <item>@color/indigo_200</item>
+        <item>@color/indigo_300</item>
+        <item>@color/indigo_400</item>
+        <item>@color/indigo_500</item>
+        <item>@color/indigo_600</item>
+        <item>@color/indigo_700</item>
+        <item>@color/indigo_800</item>
+        <item>@color/indigo_900</item>
+        <item>@color/indigo_A100</item>
+        <item>@color/indigo_A200</item>
+        <item>@color/indigo_A400</item>
+        <item>@color/indigo_A700</item>
+    </array>
+
+    <array name="color_pinks">
+        <item>@color/pink_50</item>
+        <item>@color/pink_100</item>
+        <item>@color/pink_200</item>
+        <item>@color/pink_300</item>
+        <item>@color/pink_400</item>
+        <item>@color/pink_500</item>
+        <item>@color/pink_600</item>
+        <item>@color/pink_700</item>
+        <item>@color/pink_800</item>
+        <item>@color/pink_900</item>
+        <item>@color/pink_A100</item>
+        <item>@color/pink_A200</item>
+        <item>@color/pink_A400</item>
+        <item>@color/pink_A700</item>
+    </array>
+</resources>

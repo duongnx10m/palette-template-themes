@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import com.duongnx.palettethemes.R;
 import com.duongnx.palettethemes.fragments.FrgColor;
 
 /**
@@ -11,6 +12,7 @@ import com.duongnx.palettethemes.fragments.FrgColor;
  */
 public class AdapterPagerColor extends FragmentPagerAdapter {
 
+    private int[] colors = {R.array.color_reds, R.array.color_indigos, R.array.color_pinks};
 
     public AdapterPagerColor(FragmentManager fm) {
         super(fm);
@@ -19,12 +21,12 @@ public class AdapterPagerColor extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return new FrgColor();
+        return FrgColor.init(colors[position]);
     }
 
     @Override
     public int getCount() {
-        return 2;
+        return colors.length;
     }
 
     @Override
@@ -32,8 +34,12 @@ public class AdapterPagerColor extends FragmentPagerAdapter {
         switch (position) {
             case 0:
                 return "Red";
-            default:
+            case 1:
                 return "Indigo";
+            case 2:
+                return "Pink";
+            default:
+                return "";
         }
     }
 

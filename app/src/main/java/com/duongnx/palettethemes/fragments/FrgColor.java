@@ -1,6 +1,7 @@
 package com.duongnx.palettethemes.fragments;
 
-import android.content.Intent;
+import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,20 +10,30 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.duongnx.configs.GApplication;
-import com.duongnx.configs.ThemeType;
-import com.duongnx.navigationdrawer.NavigationActivity;
 import com.duongnx.palettethemes.R;
-import com.duongnx.palettethemes.adapter.AdapterMain;
+import com.duongnx.palettethemes.adapter.AdapterColor;
+import com.duongnx.palettethemes.models.ItemColor;
+
+import java.util.ArrayList;
 
 /**
  * Created by duongnx on 11/15/16.
  */
 
 public class FrgColor extends FrgBase {
-
     private RecyclerView recylerView;
-    private AdapterMain mAdapter;
+    private AdapterColor mAdapter;
+    private int arrColorRes = R.array.color_reds;
+
+    public static FrgColor init(int colors) {
+        FrgColor frgColor = new FrgColor();
+        frgColor.setArrColorRes(colors);
+        return frgColor;
+    }
+
+    public void setArrColorRes(int arrColorRes) {
+        this.arrColorRes = arrColorRes;
+    }
 
     @Nullable
     @Override
@@ -35,11 +46,27 @@ public class FrgColor extends FrgBase {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         recylerView = (RecyclerView) mRootView.findViewById(R.id.recyclerView);
-        //mAdapter = new AdapterMain(mActivity, themeTypes);
-        //mAdapter.setOnRecyclerItemClickListener(this);
-        //mAdapter.setOnRecyclerItemClickListener(this);
+        if (mAdapter == null) {
+            mAdapter = new AdapterColor(mActivity, getDatas());
+        }
         initListView();
         recylerView.setAdapter(mAdapter);
+    }
+
+    private ArrayList<ItemColor> getDatas() {
+        ArrayList<ItemColor> itemColors = new ArrayList<>();
+        TypedArray typedArray = mActivity.getResources().obtainTypedArray(R.array.color_names);
+        TypedArray typedArray1 = mActivity.getResources().obtainTypedArray(arrColorRes);
+        for (int i = 0; i < typedArray.length(); i++) {
+            int color = typedArray1.getColor(i, Color.BLACK);
+            String name = typedArray.getString(i);
+            itemColors.add(new ItemColor(name, color));
+        }
+        ItemColor itemColor = new ItemColor(itemColors.get(5).getName(), itemColors.get(5).getColor());
+        itemColors.add(0, itemColor);
+        typedArray.recycle();
+        typedArray1.recycle();
+        return itemColors;
     }
 
     private void initListView() {

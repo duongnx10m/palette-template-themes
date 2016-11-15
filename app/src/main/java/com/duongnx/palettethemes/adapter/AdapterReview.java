@@ -1,36 +1,30 @@
 package com.duongnx.palettethemes.adapter;
 
 import android.content.Context;
-import android.content.res.TypedArray;
-import android.graphics.Color;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.duongnx.configs.GApplication;
 import com.duongnx.configs.ThemeType;
 import com.duongnx.configs.utils.Utils;
 import com.duongnx.palettethemes.R;
+import com.duongnx.palettethemes.common.OnRecyclerItemClickListener;
 
 /**
  * Created by duongnx on 11/4/16.
  */
 
-public class AdapterMain extends RecyclerView.Adapter<AdapterMain.VhMain> implements View.OnClickListener {
-    public interface OnRecyclerItemClickListener {
-        void onRecyclerItemClick(int position);
-    }
+public class AdapterReview extends RecyclerView.Adapter<AdapterReview.VhMain> implements View.OnClickListener {
+
 
     private Context mContext;
     private ThemeType[] datas = {};
     private OnRecyclerItemClickListener onRecyclerItemClickListener;
 
 
-    public AdapterMain(Context context, ThemeType[] datas) {
+    public AdapterReview(Context context, ThemeType[] datas) {
         super();
         this.datas = datas;
         this.mContext = context;
@@ -42,7 +36,7 @@ public class AdapterMain extends RecyclerView.Adapter<AdapterMain.VhMain> implem
 
     @Override
     public VhMain onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.item_main, parent, false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.item_lv_preview, parent, false);
         view.setOnClickListener(this);
         return new VhMain(view);
     }

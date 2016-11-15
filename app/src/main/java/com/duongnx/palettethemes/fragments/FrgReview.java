@@ -13,17 +13,18 @@ import com.duongnx.configs.GApplication;
 import com.duongnx.configs.ThemeType;
 import com.duongnx.navigationdrawer.NavigationActivity;
 import com.duongnx.palettethemes.R;
-import com.duongnx.palettethemes.adapter.AdapterMain;
+import com.duongnx.palettethemes.adapter.AdapterReview;
+import com.duongnx.palettethemes.common.OnRecyclerItemClickListener;
 
 /**
  * Created by duongnx on 11/14/16.
  */
 
-public class FrgReview extends FrgBase implements AdapterMain.OnRecyclerItemClickListener {
+public class FrgReview extends FrgBase implements OnRecyclerItemClickListener {
 
     private final ThemeType[] themeTypes = {ThemeType.RED, ThemeType.INDIGO};
     private RecyclerView recylerView;
-    private AdapterMain mAdapter;
+    private AdapterReview mAdapter;
 
 
     @Nullable
@@ -37,7 +38,7 @@ public class FrgReview extends FrgBase implements AdapterMain.OnRecyclerItemClic
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         recylerView = (RecyclerView) mRootView.findViewById(R.id.recyclerView);
-        mAdapter = new AdapterMain(mActivity, themeTypes);
+        mAdapter = new AdapterReview(mActivity, themeTypes);
         mAdapter.setOnRecyclerItemClickListener(this);
         initListView();
         recylerView.setAdapter(mAdapter);

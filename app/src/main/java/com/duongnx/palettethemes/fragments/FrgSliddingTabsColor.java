@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.duongnx.palettethemes.R;
+import com.duongnx.palettethemes.adapter.AdapterPagerColor;
 import com.duongnx.palettethemes.adapter.AdapterPagerReview;
 import com.duongnx.palettethemes.slidding.SlidingTabLayout;
 
@@ -18,7 +19,7 @@ import com.duongnx.palettethemes.slidding.SlidingTabLayout;
 public class FrgSliddingTabsColor extends FrgBase {
     private SlidingTabLayout slidingTabLayout;
     private ViewPager viewPager;
-    private AdapterPagerReview mAdapter;
+    private AdapterPagerColor mAdapter;
 
     @Nullable
     @Override
@@ -34,7 +35,7 @@ public class FrgSliddingTabsColor extends FrgBase {
         viewPager = (ViewPager) mRootView.findViewById(R.id.viewPager);
 
         if (mAdapter == null) {
-            mAdapter = new AdapterPagerReview(getChildFragmentManager());
+            mAdapter = new AdapterPagerColor(getChildFragmentManager());
         }
 
         viewPager.setAdapter(mAdapter);
