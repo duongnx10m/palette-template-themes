@@ -4,7 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.duongnx.palettethemes.fragments.FrgReview;
+import com.duongnx.palettethemes.fragments.FrgPreview;
 
 /**
  * Created by duongnx on 8/17/2016.
@@ -19,7 +19,7 @@ public class AdapterPagerReview extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return new FrgReview();
+        return new FrgPreview();
     }
 
     @Override

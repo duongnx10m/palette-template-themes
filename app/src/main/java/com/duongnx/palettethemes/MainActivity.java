@@ -4,7 +4,6 @@ import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
@@ -14,11 +13,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.duongnx.configs.GApplication;
+import com.duongnx.palettethemes.fragments.FrgPreview;
 import com.duongnx.palettethemes.fragments.FrgSliddingTabsColor;
-import com.duongnx.palettethemes.fragments.FrgSliddingTabsReview;
+import com.duongnx.palettethemes.fragments.FrgTemplate;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -102,7 +101,10 @@ public class MainActivity extends AppCompatActivity
                 changeMenuFragment(new FrgSliddingTabsColor());
                 break;
             case R.id.nav_preview:
-                changeMenuFragment(new FrgSliddingTabsReview());
+                changeMenuFragment(new FrgTemplate());
+                break;
+            case R.id.nav_theme:
+                changeMenuFragment(new FrgPreview());
                 break;
         }
 

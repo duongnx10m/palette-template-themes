@@ -27,7 +27,7 @@ public enum ThemeType {
     ORANGE(R.style.AppThemeOrange_NoActionBar),
     DEEP_ORANGE(R.style.AppThemeDeepOrange_NoActionBar),
     BROWN(R.style.AppThemeBrown_NoActionBar),
-    GREY(R.style.AppThemeGreen_NoActionBar),
+    GREY(R.style.AppThemeGrey_NoActionBar),
     BLUE_GREY(R.style.AppThemeBlueGrey_NoActionBar),;
 
     private int themeId;

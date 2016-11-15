@@ -21,7 +21,7 @@ import com.duongnx.scrolling.ScrollingActivity;
  * Created by duongnx on 11/14/16.
  */
 
-public class FrgReview extends FrgBase implements OnRecyclerItemClickListener {
+public class FrgPreview extends FrgBase implements OnRecyclerItemClickListener {
 
     private final ThemeType[] themeTypes = {ThemeType.RED, ThemeType.INDIGO};
     private RecyclerView recylerView;

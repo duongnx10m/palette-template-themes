@@ -10,7 +10,12 @@
         <item
             android:id="@+id/nav_preview"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Color Preview" />
+            android:title="Project Templates" />
+
+        <item
+            android:id="@+id/nav_theme"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Themes" />
 
     </group>
 
