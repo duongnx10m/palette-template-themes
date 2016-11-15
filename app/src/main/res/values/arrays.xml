@@ -65,4 +65,54 @@
         <item>@color/pink_A400</item>
         <item>@color/pink_A700</item>
     </array>
+
+    <array name="color_purples">
+        <item>@color/purple_50</item>
+        <item>@color/purple_100</item>
+        <item>@color/purple_200</item>
+        <item>@color/purple_300</item>
+        <item>@color/purple_400</item>
+        <item>@color/purple_500</item>
+        <item>@color/purple_600</item>
+        <item>@color/purple_700</item>
+        <item>@color/purple_800</item>
+        <item>@color/purple_900</item>
+        <item>@color/purple_A100</item>
+        <item>@color/purple_A200</item>
+        <item>@color/purple_A400</item>
+        <item>@color/purple_A700</item>
+    </array>
+    <array name="color_deeppurples">
+        <item>@color/deeppurple_50</item>
+        <item>@color/deeppurple_100</item>
+        <item>@color/deeppurple_200</item>
+        <item>@color/deeppurple_300</item>
+        <item>@color/deeppurple_400</item>
+        <item>@color/deeppurple_500</item>
+        <item>@color/deeppurple_600</item>
+        <item>@color/deeppurple_700</item>
+        <item>@color/deeppurple_800</item>
+        <item>@color/deeppurple_900</item>
+        <item>@color/deeppurple_A100</item>
+        <item>@color/deeppurple_A200</item>
+        <item>@color/deeppurple_A400</item>
+        <item>@color/deeppurple_A700</item>
+    </array>
+
+    <array name="color_blues">
+        <item>@color/blue_50</item>
+        <item>@color/blue_100</item>
+        <item>@color/blue_200</item>
+        <item>@color/blue_300</item>
+        <item>@color/blue_400</item>
+        <item>@color/blue_500</item>
+        <item>@color/blue_600</item>
+        <item>@color/blue_700</item>
+        <item>@color/blue_800</item>
+        <item>@color/blue_900</item>
+        <item>@color/blue_A100</item>
+        <item>@color/blue_A200</item>
+        <item>@color/blue_A400</item>
+        <item>@color/blue_A700</item>
+    </array>
 </resources>

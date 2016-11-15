@@ -12,7 +12,7 @@ import com.duongnx.palettethemes.fragments.FrgColor;
  */
 public class AdapterPagerColor extends FragmentPagerAdapter {
 
-    private int[] colors = {R.array.color_reds, R.array.color_indigos, R.array.color_pinks};
+    private int[] colors = {R.array.color_reds, R.array.color_indigos, R.array.color_pinks, R.array.color_purples, R.array.color_deeppurples, R.array.color_blues};
 
     public AdapterPagerColor(FragmentManager fm) {
         super(fm);
@@ -38,6 +38,12 @@ public class AdapterPagerColor extends FragmentPagerAdapter {
                 return "Indigo";
             case 2:
                 return "Pink";
+            case 3:
+                return "purples";
+            case 4:
+                return "Deep purples";
+            case 5:
+                return "Blue";
             default:
                 return "";
         }
