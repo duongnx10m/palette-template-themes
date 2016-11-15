@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.duongnx.configs.GApplication;
 import com.duongnx.configs.ThemeType;
@@ -74,13 +75,17 @@ public class AdapterMain extends RecyclerView.Adapter<AdapterMain.VhMain> implem
 
     public class VhMain extends RecyclerView.ViewHolder {
         private View colorPrimaryDark, colorPrimary, colorAccent;
-
+        private TextView tvPrimaryDark, tvPrimary, tvAccent;
 
         public VhMain(View itemView) {
             super(itemView);
             colorPrimaryDark = itemView.findViewById(R.id.colorPrimaryDark);
             colorPrimary = itemView.findViewById(R.id.colorPrimary);
             colorAccent = itemView.findViewById(R.id.colorAccent);
+
+            tvPrimaryDark = (TextView) itemView.findViewById(R.id.tvPrimaryDark);
+            tvPrimary = (TextView) itemView.findViewById(R.id.tvPrimary);
+            tvAccent = (TextView) itemView.findViewById(R.id.tvAccent);
         }
 
 
@@ -90,7 +95,10 @@ public class AdapterMain extends RecyclerView.Adapter<AdapterMain.VhMain> implem
             colorAccent.setBackgroundColor(colors[0]);
             colorPrimary.setBackgroundColor(colors[1]);
             colorPrimaryDark.setBackgroundColor(colors[2]);
-            // Log.d("duongnx", "setContent:" + themeType.name() + themeType.getThemeId() + ";" + Integer.toHexString(colors[0]));
+
+            tvAccent.setText("colorAccent: #" + Integer.toHexString(colors[0]).replaceAll("ff", ""));
+            tvPrimary.setText("colorPrimary: #" + Integer.toHexString(colors[1]).replaceAll("ff", ""));
+            tvPrimaryDark.setText("colorPrimaryDark: #" + Integer.toHexString(colors[2]).replaceAll("ff", ""));
         }
 
 

@@ -20,11 +20,12 @@
             android:background="@color/red_700"></View>
 
         <TextView
+            android:id="@+id/tvPrimaryDark"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:text="colorPrimaryDark"
-            android:textSize="18sp" />
+            android:textSize="16sp" />
 
     </LinearLayout>
 
@@ -42,11 +43,12 @@
             android:background="@color/red_700"></View>
 
         <TextView
+            android:id="@+id/tvPrimary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:text="colorPrimary"
-            android:textSize="18sp" />
+            android:textSize="16sp" />
 
     </LinearLayout>
 
@@ -64,11 +66,12 @@
             android:background="@color/red_700"></View>
 
         <TextView
+            android:id="@+id/tvAccent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:text="colorAccent"
-            android:textSize="18sp" />
+            android:textSize="16sp" />
 
     </LinearLayout>
 
