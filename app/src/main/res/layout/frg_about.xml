@@ -26,6 +26,20 @@
             android:id="@+id/tvDev"
             style="@style/tv_about_content" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
 
+            <Button
+                android:id="@+id/btFeedback"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_play"
+                android:text="@string/feedback"
+                android:textColor="@color/white" />
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>

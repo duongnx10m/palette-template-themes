@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.Point;
+import android.net.Uri;
 import android.os.Build;
 import android.text.Html;
 import android.text.Layout;
@@ -162,4 +163,13 @@ public class Utils {
         emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "NDK Examples");
         context.startActivity(Intent.createChooser(emailIntent, "Send mail..."));
     }
+
+    public static void startActivityWithUrl(Context context, String url) {
+        if (!TextUtils.isEmpty(url) && context != null) {
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse(url));
+            context.startActivity(intent);
+        }
+    }
+
 }

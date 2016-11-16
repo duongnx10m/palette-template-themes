@@ -20,7 +20,7 @@ public class FrgAbout extends FrgBase implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mRootView = inflater.inflate(R.layout.frg_about, container, false);
-        //mRootView.findViewById(R.id.btFeedback).setOnClickListener(this);
+        mRootView.findViewById(R.id.btFeedback).setOnClickListener(this);
         return mRootView;
     }
 

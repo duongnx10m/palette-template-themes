@@ -13,8 +13,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.duongnx.configs.GApplication;
+import com.duongnx.configs.utils.Utils;
+import com.duongnx.palettethemes.fragments.FrgAbout;
 import com.duongnx.palettethemes.fragments.FrgPreview;
 import com.duongnx.palettethemes.fragments.FrgSliddingTabsColor;
 import com.duongnx.palettethemes.fragments.FrgTemplate;
@@ -43,6 +46,7 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        setTitle(getString(R.string.color_palette));
         changeMenuFragment(new FrgSliddingTabsColor());
         loadNames();
     }
@@ -73,23 +77,27 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (item.getItemId()) {
+            case R.id.menu_view_source:
+                Utils.startActivityWithUrl(this, Defines.GIT_MY_SOURCE);
+                break;
+            case R.id.menu_rate: {
+                Utils.startActivityWithUrl(this, Defines.RATE);
+                break;
+            }
+            case R.id.menu_more: {
+                Utils.startActivityWithUrl(this, Defines.MORE_APPS);
+            }
+            break;
         }
-
-        return super.onOptionsItemSelected(item);
+        return true;
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -98,13 +106,19 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         switch (item.getItemId()) {
             case R.id.nav_color:
+                setTitle(getString(R.string.color_palette));
+                floatingActionButton.setVisibility(View.VISIBLE);
                 changeMenuFragment(new FrgSliddingTabsColor());
                 break;
             case R.id.nav_theme:
+                setTitle(getString(R.string.material_theme));
+                floatingActionButton.setVisibility(View.GONE);
                 changeMenuFragment(new FrgTemplate());
                 break;
             case R.id.nav_about:
-                changeMenuFragment(new FrgPreview());
+                setTitle(getString(R.string.about));
+                floatingActionButton.setVisibility(View.GONE);
+                changeMenuFragment(new FrgAbout());
                 break;
         }
 

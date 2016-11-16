@@ -1,5 +1,10 @@
 <resources>
-    <string name="app_name">ColorPalette</string>
+    <string name="app_name">ColorThemes</string>
+
+    <string name="color_palette">Color Palette</string>
+    <string name="material_theme">Material Themes</string>
+    <string name="about">About</string>
+
     <string name="c_50">50</string>
     <string name="c_100">100</string>
     <string name="c_200">200</string>
@@ -20,7 +25,7 @@
     <string name="application_info_text">
         <![CDATA[
             <p>Version: %1$s</p>
-            <p>This application is open source at <a href="https://github.com/duongnx10m/ndk-examples">github.com/duongnx10m/ndk-examples</a></p>
+            <p>This application is open source at <a href="https://github.com/duongnx10m/palette-template-themes">github.com/duongnx10m/palette-template-themes</a></p>
         ]]>
     </string>
 
@@ -31,5 +36,5 @@
             <p><a href="https://www.linkedin.com/in/duong-nx-5b2131131">LinkIn</a></p>
         ]]>
     </string>
-
+    <string name="feedback">Feed Back</string>
 </resources>

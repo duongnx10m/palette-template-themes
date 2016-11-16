@@ -5,6 +5,8 @@ package com.duongnx.palettethemes;
  */
 
 public class Defines {
-    public static final int TYPE_NORMAL = 0;
-    public static final int TYPE_CLICK_FAB = 1;
+    public static final String GIT_MY_SOURCE = "https://github.com/duongnx10m/palette-template-themes";
+    public static final String MORE_APPS = "https://play.google.com/store/apps/developer?id=Conduit+Apps";
+    public static final String RATE = "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID;
+
 }

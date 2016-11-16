@@ -6,16 +6,16 @@
             android:id="@+id/nav_color"
             android:checked="true"
             android:icon="@drawable/ic_source"
-            android:title="Color Palette" />
+            android:title="@string/color_palette" />
         <item
             android:id="@+id/nav_theme"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Themes" />
+            android:title="@string/material_theme" />
 
         <item
             android:id="@+id/nav_about"
             android:icon="@drawable/ic_info_white_24dp"
-            android:title="About"></item>
+            android:title="@string/about"></item>
     </group>
 
 
