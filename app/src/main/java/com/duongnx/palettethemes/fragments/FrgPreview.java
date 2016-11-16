@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 
 import com.duongnx.configs.GApplication;
 import com.duongnx.configs.ThemeType;
-import com.duongnx.navigationdrawer.NavigationActivity;
 import com.duongnx.palettethemes.R;
 import com.duongnx.palettethemes.adapter.AdapterReview;
 import com.duongnx.palettethemes.common.OnRecyclerItemClickListener;

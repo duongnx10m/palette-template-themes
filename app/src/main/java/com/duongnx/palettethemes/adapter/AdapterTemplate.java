@@ -2,12 +2,17 @@ package com.duongnx.palettethemes.adapter;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.duongnx.configs.utils.Utils;
 import com.duongnx.palettethemes.R;
 import com.duongnx.palettethemes.common.OnRecyclerItemClickListener;
 import com.duongnx.palettethemes.models.ItemColor;
@@ -71,15 +76,29 @@ public class AdapterTemplate extends RecyclerView.Adapter<AdapterTemplate.VhMain
     }
 
     public class VhMain extends RecyclerView.ViewHolder {
-        private View itemView;
-
+        private View itemView, lnHeader, rlContent, rlCircle;
+        private TextView tvName;
 
         public VhMain(View itemView) {
             super(itemView);
             this.itemView = itemView;
+            lnHeader = itemView.findViewById(R.id.lnHeader);
+            tvName = (TextView) itemView.findViewById(R.id.tvName);
+            rlContent = itemView.findViewById(R.id.rlContent);
+            rlCircle = itemView.findViewById(R.id.rlCircle);
         }
 
         public void setContent(ItemTemplate itemTemplate, int position) {
+            mContext.setTheme(itemTemplate.getThemeType().getThemeId());
+            int[] colors = Utils.getColorsFromTheme(mContext, itemTemplate.getThemeType().getThemeId());
+            tvName.setText(itemTemplate.getName());
+            lnHeader.setBackgroundColor(colors[2]);
+            rlContent.setBackgroundColor(colors[1]);
+            Drawable drawable = ContextCompat.getDrawable(mContext, R.drawable.shape_circle_red_a200);
+            drawable.setColorFilter(colors[0], PorterDuff.Mode.SRC_ATOP);
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN)
+                rlCircle.setBackgroundDrawable(drawable);
+            else rlCircle.setBackground(drawable);
 
         }
 

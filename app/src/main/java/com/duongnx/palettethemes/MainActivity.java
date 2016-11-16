@@ -100,10 +100,10 @@ public class MainActivity extends AppCompatActivity
             case R.id.nav_color:
                 changeMenuFragment(new FrgSliddingTabsColor());
                 break;
-            case R.id.nav_preview:
+            case R.id.nav_theme:
                 changeMenuFragment(new FrgTemplate());
                 break;
-            case R.id.nav_theme:
+            case R.id.nav_about:
                 changeMenuFragment(new FrgPreview());
                 break;
         }

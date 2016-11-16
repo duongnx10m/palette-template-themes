@@ -5,18 +5,17 @@
         <item
             android:id="@+id/nav_color"
             android:checked="true"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_source"
             android:title="Color Palette" />
-        <item
-            android:id="@+id/nav_preview"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Project Templates" />
-
         <item
             android:id="@+id/nav_theme"
             android:icon="@drawable/ic_menu_gallery"
             android:title="Themes" />
 
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_info_white_24dp"
+            android:title="About"></item>
     </group>
 
 

@@ -19,9 +19,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.duongnx.navigationdrawer.NavigationActivity"
-            android:screenOrientation="portrait"></activity>
-        <activity
             android:name="com.duongnx.scrolling.ScrollingActivity"
             android:screenOrientation="portrait"></activity>
     </application>

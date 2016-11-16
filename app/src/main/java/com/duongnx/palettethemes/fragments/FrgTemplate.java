@@ -1,6 +1,5 @@
 package com.duongnx.palettethemes.fragments;
 
-import android.app.NativeActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,7 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.duongnx.navigationdrawer.NavigationActivity;
+import com.duongnx.configs.GApplication;
+import com.duongnx.configs.ThemeType;
 import com.duongnx.palettethemes.R;
 import com.duongnx.palettethemes.adapter.AdapterTemplate;
 import com.duongnx.palettethemes.common.OnRecyclerItemClickListener;
@@ -39,9 +39,26 @@ public class FrgTemplate extends FrgBase implements OnRecyclerItemClickListener 
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         ArrayList<ItemTemplate> itemTemplates = new ArrayList<>();
-        for (int i = 0; i < 6; i++) {
-            itemTemplates.add(new ItemTemplate());
-        }
+        itemTemplates.add(new ItemTemplate("Red", ThemeType.RED));
+        itemTemplates.add(new ItemTemplate("Indigo", ThemeType.INDIGO));
+        itemTemplates.add(new ItemTemplate("Pink", ThemeType.PINK));
+        itemTemplates.add(new ItemTemplate("Purple", ThemeType.PURPLE));
+        itemTemplates.add(new ItemTemplate("Deep Purple", ThemeType.DEEP_PURPLE));
+        itemTemplates.add(new ItemTemplate("Blue", ThemeType.BLUE));
+        itemTemplates.add(new ItemTemplate("Light Blue", ThemeType.LIGHT_BLUE));
+        itemTemplates.add(new ItemTemplate("Cyan", ThemeType.CYAN));
+        itemTemplates.add(new ItemTemplate("Teal", ThemeType.TEAL));
+        itemTemplates.add(new ItemTemplate("Green", ThemeType.GREEN));
+        itemTemplates.add(new ItemTemplate("Light Green", ThemeType.LIGHT_GREEN));
+        itemTemplates.add(new ItemTemplate("Lime", ThemeType.LIME));
+        itemTemplates.add(new ItemTemplate("Yello", ThemeType.YELLO));
+        itemTemplates.add(new ItemTemplate("Amber", ThemeType.AMBER));
+        itemTemplates.add(new ItemTemplate("Orange", ThemeType.ORANGE));
+        itemTemplates.add(new ItemTemplate("Deep Orange", ThemeType.DEEP_ORANGE));
+        itemTemplates.add(new ItemTemplate("Brown", ThemeType.BROWN));
+        itemTemplates.add(new ItemTemplate("Grey", ThemeType.GREY));
+        itemTemplates.add(new ItemTemplate("Blue Grey", ThemeType.BLUE_GREY));
+
         if (mAdapter == null) {
             mAdapter = new AdapterTemplate(mActivity, itemTemplates);
             mAdapter.setOnRecyclerItemClickListener(this);
@@ -51,16 +68,11 @@ public class FrgTemplate extends FrgBase implements OnRecyclerItemClickListener 
 
     @Override
     public void onRecyclerItemClick(int position) {
-        Intent intent = null;
-        switch (position) {
-            case 0:
-                intent = new Intent(mActivity, ScrollingActivity.class);
-                break;
-            case 1:
-                intent = new Intent(mActivity, NavigationActivity.class);
-                break;
-        }
-        if (intent != null)
-            mActivity.startActivity(intent);
+        ItemTemplate itemTemplate = mAdapter.getItem(position);
+        GApplication.getInstance().setThemeType(itemTemplate.getThemeType());
+        Intent intent = new Intent(mActivity, ScrollingActivity.class);
+        mActivity.startActivity(intent);
     }
+
+
 }
