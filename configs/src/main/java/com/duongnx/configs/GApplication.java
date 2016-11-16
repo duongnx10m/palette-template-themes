@@ -11,6 +11,7 @@ public class GApplication extends Application {
     private ThemeType themeType = ThemeType.PINK;
     static GApplication instance;
     private int currentViewPagerItem = 0;
+    private boolean isReCreateTheme = false;
 
     public static GApplication getInstance() {
         return instance;
@@ -38,5 +39,13 @@ public class GApplication extends Application {
 
     public void setCurrentViewPagerItem(int currentViewPagerItem) {
         this.currentViewPagerItem = currentViewPagerItem;
+    }
+
+    public boolean isReCreateTheme() {
+        return isReCreateTheme;
+    }
+
+    public void setReCreateTheme(boolean reCreateTheme) {
+        isReCreateTheme = reCreateTheme;
     }
 }

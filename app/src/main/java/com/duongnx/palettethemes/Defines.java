@@ -9,4 +9,5 @@ public class Defines {
     public static final String MORE_APPS = "https://play.google.com/store/apps/developer?id=Conduit+Apps";
     public static final String RATE = "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID;
 
+    public static final int REQUEST_CODE = 101;
 }

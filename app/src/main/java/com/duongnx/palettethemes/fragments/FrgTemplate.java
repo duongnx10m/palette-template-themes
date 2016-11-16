@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import com.duongnx.configs.GApplication;
 import com.duongnx.configs.ThemeType;
+import com.duongnx.palettethemes.Defines;
 import com.duongnx.palettethemes.R;
 import com.duongnx.palettethemes.adapter.AdapterTemplate;
 import com.duongnx.palettethemes.common.OnRecyclerItemClickListener;
@@ -71,7 +72,7 @@ public class FrgTemplate extends FrgBase implements OnRecyclerItemClickListener 
         ItemTemplate itemTemplate = mAdapter.getItem(position);
         GApplication.getInstance().setThemeType(itemTemplate.getThemeType());
         Intent intent = new Intent(mActivity, ScrollingActivity.class);
-        mActivity.startActivity(intent);
+        mActivity.startActivityForResult(intent, Defines.REQUEST_CODE);
     }
 
 

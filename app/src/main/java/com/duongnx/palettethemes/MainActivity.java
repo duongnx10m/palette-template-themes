@@ -1,5 +1,6 @@
 package com.duongnx.palettethemes;
 
+import android.content.Intent;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -18,7 +19,6 @@ import android.view.View;
 import com.duongnx.configs.GApplication;
 import com.duongnx.configs.utils.Utils;
 import com.duongnx.palettethemes.fragments.FrgAbout;
-import com.duongnx.palettethemes.fragments.FrgPreview;
 import com.duongnx.palettethemes.fragments.FrgSliddingTabsColor;
 import com.duongnx.palettethemes.fragments.FrgTemplate;
 
@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private String[] colorNames;
     private FloatingActionButton floatingActionButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +47,16 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        setTitle(getString(R.string.color_palette));
-        changeMenuFragment(new FrgSliddingTabsColor());
+        if (GApplication.getInstance().isReCreateTheme()) {
+            floatingActionButton.setVisibility(View.GONE);
+            setTitle(getString(R.string.material_theme));
+            changeMenuFragment(new FrgTemplate());
+            GApplication.getInstance().setReCreateTheme(false);
+        } else {
+            floatingActionButton.setVisibility(View.VISIBLE);
+            setTitle(getString(R.string.color_palette));
+            changeMenuFragment(new FrgSliddingTabsColor());
+        }
         loadNames();
     }
 
@@ -140,4 +149,15 @@ public class MainActivity extends AppCompatActivity
     public FloatingActionButton getFloatingActionButton() {
         return floatingActionButton;
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK && requestCode == Defines.REQUEST_CODE) {
+            GApplication.getInstance().setReCreateTheme(true);
+            recreate();
+        }
+    }
+
+
 }

@@ -213,7 +213,7 @@
     <style name="AppThemeGrey" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/grey_500</item>
         <item name="colorPrimaryDark">@color/grey_700</item>
-        <item name="colorAccent">@color/red_A200</item>
+        <item name="colorAccent">@color/indigo_A200</item>
     </style>
 
 
@@ -225,7 +225,7 @@
     <style name="AppThemeBlueGrey" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/bluegrey_500</item>
         <item name="colorPrimaryDark">@color/bluegrey_700</item>
-        <item name="colorAccent">@color/red_A200</item>
+        <item name="colorAccent">@color/green_A200</item>
     </style>
 
 
