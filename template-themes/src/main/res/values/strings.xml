@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="c_50">50</string>
+    <string name="c_100">100</string>
+    <string name="c_200">200</string>
+    <string name="c_300">300</string>
+    <string name="c_400">400</string>
+    <string name="c_500">500</string>
+    <string name="c_600">600</string>
+    <string name="c_700">700</string>
+    <string name="c_800">800</string>
+    <string name="c_900">900</string>
+    <string name="c_A100">A100</string>
+    <string name="c_A200">A200</string>
+    <string name="c_A400">A400</string>
+    <string name="c_A700">A700</string>
+</resources>

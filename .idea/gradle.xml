@@ -10,8 +10,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/configs" />
             <option value="$PROJECT_DIR$/scrolling" />
+            <option value="$PROJECT_DIR$/template-themes" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

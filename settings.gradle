@@ -1,1 +1,1 @@
-include ':app', ':configs', ':scrolling'
+include ':app', ':template-themes', ':scrolling'
